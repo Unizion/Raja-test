@@ -4,11 +4,30 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style>
+        .form-group {
+            height: 50px;
+        }
+        .form {
+            height: 50px;
+            width:50px;
+            margin: 10px;
+            background-color: black;
+            display: none;
+        }
+        .show {
+            display: inline-block;
+        }
+        .round {
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
 
     <label for="numbers">Choisissez un chiffre:</label>
         <select name="numbers" id="numbers">
+            <option value=0></option>
             <option value=1>1</option>
             <option value=2>2</option>
             <option value=3>3</option>
@@ -19,9 +38,44 @@
             <option value=8>8</option>
             <option value=9>9</option>
         </select>
-       <div>
-       
+       <div class="form-group">
+           <div class="form" id="form-1"></div>
+           <div class="form"></div>
+           <div class="form"></div>
+           <div class="form"></div>
+           <div class="form"></div>
+           <div class="form"></div>
+           <div class="form"></div>
+           <div class="form"></div>
+           <div class="form"></div>
        </div>
 </body>
+    <script>
+        let select = document.getElementById('numbers');
+        let forms = document.getElementsByClassName('form');
+        let impair;
+        select.addEventListener("change",() =>{
+            impair = false
+            
+            for(y in forms){
+                forms[y].className= 'form'
+            }
+          
+            if(select.value % 2 == 1){
+                impair = true;
+            }
+            for(x in forms){
+                if(x < select.value && impair == false){
+                    forms[x].classList.add('show');
+                } else if (x < select.value) {
+                    forms[x].classList.add('show','round');
+                }
+            }
+                        
+        })
+
+        
+        
+    </script>
 
 </html>
