@@ -9,7 +9,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     mode:'production',
-    entry: './src/client/index.js',
+    entry: './src/website/index.js',
     optimization: {
         minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
@@ -38,7 +38,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/client/views/index.html",
+            template: "./src/website/views/index.html",
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({ filename: "[name].css" }),

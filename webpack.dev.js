@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode:'development',
-    entry: './src/client/index.js',
+    entry: './src/website/index.js',
     devtool: 'source-map',
     output: {
         libraryTarget: 'var',
@@ -33,7 +33,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/client/views/index.html",
+            template: "./src/website/views/index.html",
             filename: "./index.html",
         }),
         new CleanWebpackPlugin({

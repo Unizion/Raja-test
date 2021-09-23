@@ -1,0 +1,60 @@
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-up {
+  @media (min-width: 768px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1280px) { @content; }
+}
+
+header {
+	
+	background-color: #F2F4F9;
+	
+	padding: 25px;
+	.navigation{
+		color : #777777;
+		width: 100%;
+		padding: 15px 0;
+
+		.nav-position{
+			font-weight: bold;
+		}
+	}
+	.header-picture{
+		padding:0 50px;
+		height: 250px;
+		display: flex;
+		background-size:cover;
+		background-image: url("../img/ALL-LP-new-website-top-mob.png");
+		background-repeat: no-repeat;
+		background-position:center;
+		.text {
+			margin: auto;
+			
+			flex:1;
+			color:white;
+			h1{
+				margin-bottom: 0;
+			}
+			h2 {
+				margin-top:0;
+				font-weight: normal;
+			}
+		}
+	}
+	@include for-tablet-up{
+		padding: 0 75px;
+		.header-picture{
+			height:500px;
+			background-image: url("../img/ALL-LP-new-website-top.png");
+			padding: 0 100px;
+		}
+		.text {
+			font-size: 2em;
+		}
+	}
+}
+
+
